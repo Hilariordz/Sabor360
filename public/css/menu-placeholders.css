@@ -1,0 +1,98 @@
+/* CSS para crear imágenes placeholder con gradientes */
+.placeholder-tacos {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    position: relative;
+}
+
+.placeholder-tacos::before {
+    content: '🌮';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.placeholder-hamburguesas {
+    background: linear-gradient(135deg, #8b4513, #d2691e);
+    position: relative;
+}
+
+.placeholder-hamburguesas::before {
+    content: '🍔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.placeholder-sushi {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    position: relative;
+}
+
+.placeholder-sushi::before {
+    content: '🍣';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.placeholder-entradas {
+    background: linear-gradient(135deg, #32cd32, #228b22);
+    position: relative;
+}
+
+.placeholder-entradas::before {
+    content: '🥑';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.placeholder-guarniciones {
+    background: linear-gradient(135deg, #ffd700, #ffb347);
+    position: relative;
+}
+
+.placeholder-guarniciones::before {
+    content: '🍟';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.placeholder-bebidas {
+    background: linear-gradient(135deg, #4169e1, #1e90ff);
+    position: relative;
+}
+
+.placeholder-bebidas::before {
+    content: '🍹';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.placeholder-postres {
+    background: linear-gradient(135deg, #dda0dd, #ba844d3);
+    position: relative;
+}
+
+.placeholder-postres::before {
+    content: '🍰';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
