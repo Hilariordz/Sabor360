@@ -1,60 +1,136 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="public/sabor360.png" width="200" alt="Sabor360 Logo">
 </p>
 
-## About Laravel
+<h1 align="center">Sabor360</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+    <strong>Experiencia Culinaria 360°</strong><br>
+    Sistema de reservaciones y menú interactivo para restaurante
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+    <img src="https://img.shields.io/badge/Laravel-11.x-red.svg" alt="Laravel Version">
+    <img src="https://img.shields.io/badge/PHP-8.2+-blue.svg" alt="PHP Version">
+    <img src="https://img.shields.io/badge/TailwindCSS-3.x-38B2AC.svg" alt="Tailwind CSS">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Acerca de Sabor360
 
-## Learning Laravel
+Sabor360 es una aplicación web moderna desarrollada con Laravel que ofrece una experiencia culinaria completa. El sistema incluye:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalación y Configuración
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerrequisitos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.2 o superior
+- Composer
+- Node.js y npm
+- MySQL
+- Servidor web (Apache/Nginx) o usar `php artisan serve`
 
-## Laravel Sponsors
+### Pasos de Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clonar el repositorio**
+   ```bash
+   git clone <repository-url>
+   cd sabor360
+   ```
 
-### Premium Partners
+2. **Instalar dependencias de PHP**
+   ```bash
+   composer install
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Instalar dependencias de Node.js**
+   ```bash
+   npm install
+   ```
 
-## Contributing
+4. **Configurar el archivo de entorno**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Configurar la base de datos**
+   - Crear una base de datos MySQL llamada `sabor360`
+   - Actualizar las credenciales en `.env`:
+   ```env
+   DB_DATABASE=sabor360
+   DB_USERNAME=tu_usuario
+   DB_PASSWORD=tu_contraseña
+   ```
 
-## Code of Conduct
+6. **Ejecutar migraciones**
+   ```bash
+   php artisan migrate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Compilar assets**
+   ```bash
+   npm run build
+   # o para desarrollo:
+   npm run dev
+   ```
 
-## Security Vulnerabilities
+8. **Iniciar el servidor**
+   ```bash
+   php artisan serve
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Configuración de Email
+
+Para el sistema de notificaciones, configura tu proveedor de email en `.env`:
+
+### Para desarrollo (Mailtrap)
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=tu_username
+MAIL_PASSWORD=tu_password
+MAIL_ENCRYPTION=tls
+```
+
+### Para producción (SendGrid)
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.sendgrid.net
+MAIL_PORT=587
+MAIL_USERNAME=apikey
+MAIL_PASSWORD=tu_sendgrid_api_key
+MAIL_ENCRYPTION=tls
+```
+
+## Funcionalidades
+
+### Sistema de Reservaciones
+- Calendario interactivo personalizado
+- Validación de fechas futuras
+- Formulario completo con validaciones
+- Confirmación por email
+- Diseño responsive y elegante
+
+### Menú Interactivo
+- Navegación por categorías
+- Diseño visual atractivo
+- Información detallada de platillos
+- Optimizado para móviles
+
+### Panel de Administración
+- Gestión de reservaciones
+- Control de menú
+- Configuración del sistema
+
+## Diseño y UX
+
+- **Tema**: Oscuro elegante con acentos dorados
+- **Tipografía**: Inter + Lavishly Yours para títulos
+- **Responsive**: Optimizado para todos los dispositivos
+- **Animaciones**: Transiciones suaves y efectos hover
+- **Accesibilidad**: Diseño inclusivo y navegable
 
 ## License
 
